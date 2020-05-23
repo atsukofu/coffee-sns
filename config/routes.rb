@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
   root "posts#index"
-  resources :tweets, except: :index
+  resources :posts, except: :index
 end
