@@ -1,0 +1,59 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #ccbba3;
+  width: 100vw;
+  height: 100vh;
+  header {
+    width: 100%;
+    height: 100px;
+    background-color: #ffeacc;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    .header-logo {
+      background-color: turquoise;
+    }
+    .header-menu {
+      background-color: turquoise;
+    }
+  }
+  .container {
+    // トップページ
+    background-color: #ccf5ff;
+    width: 80%;
+    margin: 0 auto;
+    .top-head {
+      background-color: tomato;
+      width: 150px;
+      margin: 0 auto;
+    }
+    .top-index {
+      background-color: #ffeacc;
+      margin-top: 50px;
+    }
+
+    // 商品詳細ページ
+    .user-info {
+      font-size: 20px;
+      background-color: yellowgreen;
+      width: 150px;
+      margin: 0 auto;
+    }
+    ul {
+      list-style: none;
+    }
+    .product-show__menu {
+      display: flex;
+      padding-left: 60px;
+      div {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
