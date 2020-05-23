@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :likes
+  
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 end

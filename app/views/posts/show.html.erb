@@ -22,7 +22,12 @@
   <canvas>
   </canvas>
   <div class="product-show__menu">
-    <div>いいね</div>
+    <% if current_user.already_liked?(@post) %>
+      <%= button_to "いいね済み", post_like_path(@post),method: :delete %>
+    <% else %>
+      <%= button_to "いいね", post_likes_path(@post) %>
+    <% end %>
+    <%= @likes.count %>
     <div>編集</div>
     <div>削除</div>
   </div>
