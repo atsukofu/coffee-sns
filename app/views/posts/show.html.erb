@@ -27,6 +27,7 @@
     <% else %>
       <%= button_to "いいね", post_likes_path(@post) %>
     <% end %>
+    <%= @likes.count %>
     <div>編集</div>
     <div>削除</div>
   </div>
