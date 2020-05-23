@@ -3,12 +3,21 @@
     user-name
   </div>
   <ul>
-    <li>商品名：プレミアムコーヒー</li>
-    <li>購入店舗：梅田コーヒー</li>
-    <li>豆の銘柄：モカ</li>
-    <li>価格：700円</li>
-    <li>単位：１袋</li>
-    <li>全体評価：5</li>
+    <li>商品名：<%= @post.product %></li>
+    <li>購入店舗：<%= @post.shop %></li>
+    <li>豆の銘柄：<%= @post.brand %></li>
+    <li>価格：<%= @post.price %>円</li>
+    <li>
+      単位：
+      <% if @post.per == 1 %>
+        一杯あたり
+      <% elsif @post.per == 2 %>
+        100gあたり
+      <% elsif @post.per == 3 %>
+        1袋あたり
+      <% end %>
+      </li>
+    <li>全体評価：<%= @post.stars %></li>
   </ul>
   <canvas>
   </canvas>
