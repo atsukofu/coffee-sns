@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.integer :user_id, foreign_key: true, null: false
       t.string :product, null: false
+      t.string :shop
       t.string :brand
       t.integer :price, null: false
       t.integer :per,  null: false, default: 1
