@@ -4,6 +4,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :nickname %><br /><em>(12 characters maximum)</em><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", maxlength: "12" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -19,6 +24,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_field :message, autofocus: true, autocomplete: "message" %>
   </div>
 
   <div class="actions">
