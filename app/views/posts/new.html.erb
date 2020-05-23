@@ -1,0 +1,22 @@
+<div class="container">
+  <%= form_for @post do |f| %>
+      <h3>
+        Create New Coffee Data!
+      </h3>
+      <%= f.text_field :product, placeholder: "商品名" %>
+      <%= f.text_field :shop, placeholder: "購入店舗" %>
+      <%= f.text_field :brand, placeholder: "豆の銘柄" %>
+      <%= f.text_field :price, placeholder: "価格" %>
+      <%= f.select :per, [["1杯あたり", 1],["100gあたり", 2],["1袋あたり", 3]] %>
+      <%= f.select :stars, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+      <%= f.select :acidity, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+      <%= f.select :bitterness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+      <%= f.select :sweetness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+      <%= f.select :fragrance, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+      <%= f.select :richiness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  
+
+
+</div>
