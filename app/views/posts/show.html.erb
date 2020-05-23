@@ -26,5 +26,19 @@
     <div>編集</div>
     <div>削除</div>
   </div>
+  <div class="comment">
+    <%= form_for [@post, @comment], html: { class: "comment__form" } do |f| %>
+      <%= f.text_area :content, placeholder: "コメントを書く" %>
+      <%= f.submit "SEND", class: "comment__form-send" %>
+    <% end %>
+    <div class="comment__show">
+      <% if @comments %>
+        <% @comments.each do |comment|%>
+          <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>： 
+          <%= comment.content %>
+        <% end %>
+      <% end %>    
+    </div>
+  </div>
 
 </div>
