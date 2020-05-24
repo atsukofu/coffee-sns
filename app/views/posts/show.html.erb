@@ -19,7 +19,7 @@
       </li>
     <li>全体評価：<%= @post.stars %></li>
   </ul>
-  <canvas>
+  <canvas id="myChart">
   </canvas>
   <div class="product-show__menu">
     <% if current_user.already_liked?(@post) %>

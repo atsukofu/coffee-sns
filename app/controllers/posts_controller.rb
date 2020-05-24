@@ -10,6 +10,11 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
     @like = Like.new
     @likes = Like.where(post_id: params[:id])
+    gon.acidity = @post.acidity
+    gon.bitterness = @post.bitterness
+    gon.sweetness = @post.sweetness
+    gon.fragrance = @post.fragrance
+    gon.richiness = @post.richiness
   end
 
   def new
