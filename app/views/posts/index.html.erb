@@ -1,6 +1,8 @@
 <div class="container">
   <div class="top-head">
-    sign in / sign up
+    <% if !current_user %>
+      <%= link_to "sign in / sign up", new_user_session_path %>
+    <% end %>
   </div>
   <div class="top-index">
     <article class="top-index-post">

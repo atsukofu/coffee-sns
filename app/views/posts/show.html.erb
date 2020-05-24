@@ -32,8 +32,8 @@
     <div>削除</div>
   </div>
   <div class="comment">
-    <%= form_for [@post, @comment], html: { class: "comment__form" } do |f| %>
-      <%= f.text_area :content, placeholder: "コメントを書く" %>
+    <%= form_for [@post, @comment] do |f| %>
+      <%= f.text_area :content, placeholder: "コメントを書く", class: "comment__textbox" %>
       <%= f.submit "SEND", class: "comment__form-send" %>
     <% end %>
     <div class="comment__show">
