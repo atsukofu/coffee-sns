@@ -22,16 +22,14 @@
   <canvas id="myChart">
   </canvas>
   <div class="product-show__menu">
-    <% if current_user.already_liked?(@post) %>
-      <%= button_to "いいね済み", post_like_path(@post),method: :delete %>
-    <% else %>
-      <%= button_to "いいね", post_likes_path(@post) %>
-    <% end %>
-    <%= @likes.count %>
+    <div id="like-<%= @post.id %>">
+      <%= render 'likes/like', { post: @post} %>
+    </div>
     <div>編集</div>
     <div>削除</div>
   </div>
   <div class="comment">
+    <div id="like-buttons">
     <%= form_for [@post, @comment] do |f| %>
       <%= f.text_area :content, placeholder: "コメントを書く", class: "comment__textbox" %>
       <%= f.submit "SEND", class: "comment__form-send" %>
