@@ -1,0 +1,9 @@
+<%if user_signed_in? %>
+  <% if Like.find_by(user_id: current_user.id, post_id: post.id) %>
+      <p><span>いいね！を取り消す: </span><%=link_to post.likes.count, post_like_path(post, post.likes), method: :delete, remote: true %></p>
+  <% else %>
+      <p><span>いいね！: </span><%=link_to post.likes.count, post_likes_path(post), method: :post, remote: true %></p>
+  <% end %>
+<% else %>
+  <p><span>いいね！の数</span><%= post.likes.count %></p>
+<% end %>
