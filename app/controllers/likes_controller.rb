@@ -2,8 +2,10 @@ class LikesController < ApplicationController
   before_action :set_group
   
   def create
-    @like = current_user.likes.create(post_id: params[:post_id])
-    redirect_back(fallback_location: root_path)
+    @like = current_user.likes.respond_to do |format|
+      format.html { redirect_to post_path(params[:post_id])  }
+      format.json
+    end
   end
 
   def destroy

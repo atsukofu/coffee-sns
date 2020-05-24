@@ -2,8 +2,11 @@ class CommentsController < ApplicationController
   before_action :set_group
   
   def create
-    Comment.create(comment_params)
-    redirect_to post_path(@post.id)
+    @comment = Comment.create(comment_params)
+    respond_to do |format|
+      format.html { redirect_to post_path(params[:post_id])  }
+      format.json
+    end
   end
 
   private

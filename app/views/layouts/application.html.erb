@@ -12,10 +12,13 @@
   <body>
     <header>
       <div class="header-logo">
-        Coffee SNS
+        <%=link_to "Coffe SNS", root_path %>
       </div>
       <div class="header-menu">
-        current_user
+        <% if current_user %>
+          <%= link_to current_user.nickname, "/users/#{current_user.id}" %>
+          <%= link_to "SignOut", destroy_user_session_path, method: :delete %>
+        <% end %>
       </div>
     </header>
     <%= yield %>
