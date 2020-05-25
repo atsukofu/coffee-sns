@@ -4,7 +4,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :nickname %><br /><em>(12 characters maximum)</em><br />
+    <%= f.label :nickname %><em>(12文字以下)</em><br />
     <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", maxlength: "12" %>
   </div>
 
@@ -16,7 +16,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %>文字以上)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -29,6 +29,11 @@
   <div class="field">
     <%= f.label :message %><br />
     <%= f.text_field :message, autofocus: true, autocomplete: "message" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture %><br />
+    <%= f.file_field :image, class: "picture" %>
   </div>
 
   <div class="actions">
