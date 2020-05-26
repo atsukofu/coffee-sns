@@ -1,6 +1,6 @@
 <div class="container">
   <div class="user-info">
-    user-name
+    <%= link_to @post.user.nickname, user_path(@post.user) %>
   </div>
   <ul>
     <li>商品名：<%= @post.product %></li>
@@ -37,7 +37,7 @@
     <div class="comment__show">
       <% if @comments %>
         <% @comments.each do |comment|%>
-          <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>： 
+          <%= link_to comment.user.nickname, user_path(comment.user) %>： 
           <%= comment.content %>
         <% end %>
       <% end %>    

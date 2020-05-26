@@ -1,0 +1,15 @@
+<div class="container">
+  <%= image_tag @user.image.thumb_user.url %>
+  <%= @user.nickname %>
+  <%= @user.message %>
+  <% @user.posts.each do |post| %>
+    <%= link_to post_path(post) do %>
+      <%= post.product %>
+      <%= post.stars %>
+      <%= post.likes.count %><span>いいね!</span>
+    <% end %>
+  <% end %>
+  <% if current_user.id == @user.id %>
+    <%= link_to "編集する", edit_user_registration_path(@user) %>
+  <% end %>
+</div>

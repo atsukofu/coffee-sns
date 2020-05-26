@@ -16,7 +16,7 @@
       </div>
       <div class="header-menu">
         <% if current_user %>
-          <%= link_to "/users/#{current_user.id}" do %>
+          <%= link_to user_path(current_user) do %>
             <%= image_tag current_user.image.thumb_user.url %>
             <%= current_user.nickname %>
           <% end %>
