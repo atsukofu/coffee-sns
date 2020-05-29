@@ -5,13 +5,20 @@
     <% end %>
   </div>
   <div class="top-index">
-    <article class="top-index-post">
       <% @posts.each do |post| %>
-        <%= post.user.nickname %>
-        <%= post.product %>
-        <%= post.stars %>
-        <%= post.likes.count %><span>いいね!</span>
+        <div  class="top-index__post">
+          <%= link_to post_path(post), class: "post_link" do %>
+            <%= image_tag post.user.image.thumb_user.url, class: "post-user-img" %>
+            <span class="post-user-nickname">
+              <%= post.user.nickname %>
+            </span>
+            <div class="post-product">
+              <%= post.product %>
+            </div>
+            <%= post.stars %>
+            <%= post.likes.count %><span>いいね!</span>
+          <% end %>
+        </div>
       <% end %>
-    </article>
   </div>
 </div>

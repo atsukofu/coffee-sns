@@ -1,4 +1,6 @@
 <div class="container">
+  <canvas class="myChart">
+  </canvas>
   <div class="user-info">
     <%= link_to @post.user.nickname, user_path(@post.user) %>
   </div>
@@ -19,8 +21,6 @@
       </li>
     <li>全体評価：<%= @post.stars %></li>
   </ul>
-  <canvas id="myChart">
-  </canvas>
   <div class="product-show__menu">
     <div id="like-<%= @post.id %>">
       <%= render 'likes/like', { post: @post} %>
