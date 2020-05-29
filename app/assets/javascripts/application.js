@@ -15,3 +15,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function() {
+  var acidity = gon.acidity;
+  $('.fa-bars').on('click', function() {
+    $('.more_list').toggleClass('active');
+  });
+
+})
