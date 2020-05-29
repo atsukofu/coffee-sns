@@ -6,15 +6,15 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.new
-    @comments = @post.comments.includes(:user)
-    @like = Like.new
-    @likes = Like.where(post_id: params[:id])
     gon.acidity = @post.acidity
     gon.bitterness = @post.bitterness
     gon.sweetness = @post.sweetness
     gon.fragrance = @post.fragrance
     gon.richiness = @post.richiness
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+    @like = Like.new
+    @likes = Like.where(post_id: params[:id])
   end
 
   def new
@@ -31,5 +31,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:product, :shop, :brand, :price, :per, :stars, :acidity, :bitterness, :sweetness, :fragrance, :richiness).merge(user_id: current_user.id)
   end
 
-  
 end

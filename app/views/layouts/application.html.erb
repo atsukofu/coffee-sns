@@ -2,27 +2,36 @@
 <html>
   <head>
     <title>CoffeeSns</title>
+   
+    <%= include_gon :init => true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true %>
+    <%= javascript_include_tag 'application' , 'data-turbolinks-track'=> true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= include_gon %>
   </head>
 
   <body>
     <header>
-      <div class="header-logo">
-        <%=link_to "Coffe SNS", root_path %>
-      </div>
-      <div class="header-menu">
         <% if current_user %>
-          <%= link_to user_path(current_user) do %>
-            <%= image_tag current_user.image.thumb_user.url %>
-            <%= current_user.nickname %>
-          <% end %>
-          <%= link_to "SignOut", destroy_user_session_path, method: :delete %>
+            <i class="fas fa-bars"></i>
+             <ul class="more_list">
+              <li class = "more_list__parts">
+                <%= link_to user_path(current_user), class: "login-user-link" do %>
+                  <%= image_tag current_user.image.thumb_user.url, class: "login-user-img" %>
+                  <span class="login-user-nickname">
+                    <%= current_user.nickname %>
+                  </span>
+                <% end %>
+              </li>
+              <li class = "more_list__parts">
+                <%= link_to "sign out", destroy_user_session_path, class: "sign-out-link", method: :delete %>
+              </li>
+            </ul>
         <% end %>
-      </div>
+     
+      
+          <%=link_to "Coffe SNS", root_path, class: "header-logo" %>
+     
+
     </header>
     <%= yield %>
   </body>
