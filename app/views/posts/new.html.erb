@@ -1,43 +1,37 @@
 <div class="container">
   <%= form_for @post do |f| %>
-      <h3>
+      <div class="new-title">
         Create New Coffee Data!
-      </h3>
-      <%= f.text_field :product, placeholder: "商品名" %>
-      <%= f.text_field :shop, placeholder: "購入店舗" %>
-      <%= f.text_field :brand, placeholder: "豆の銘柄" %>
-      <%= f.text_field :price, placeholder: "価格" %>
-      <div>
-        <%= f.label :per, "単位" %>
-        <%= f.select :per, [["1杯あたり", 1],["100gあたり", 2],["1袋あたり", 3]] %>
       </div>
+      <%= f.text_field :product, placeholder: "商品名", class: "new-text-field" %>
+      <%= f.text_field :shop, placeholder: "購入店舗",class: "new-text-field" %>
+      <%= f.text_field :brand, placeholder: "豆の銘柄", class: "new-text-field" %>
+      <%= f.text_field :price, placeholder: "価格", class: "new-text-field" %>
       <div>
-        <%= f.label :stars, "全体評価" %>
+        <%= f.label :per, "単位", class: "new-select__label" %>
+        <%= f.select :per, [["1杯あたり", 1],["100gあたり", 2],["1袋あたり", 3]], class: "new-select__box" %>
+      <%# </div>
+      <div> %>
+        <%= f.label :stars, "全体評価",class: "new-select__label" %>
         <%=  f.select :stars, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
       </div>
-      <div>
-        <%= f.label :acidity, "酸味" %>
-        <%= f.select :acidity, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+      <p class="detail-value">味の詳細を５段階で評価しましょう！</p>
+      <div class="detail-balue--area">
+        <div>
+          <%= f.label :acidity, "酸味",class: "new-select__label" %>
+          <%= f.select :acidity, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+          <%= f.label :bitterness, "苦味",class: "new-select__label" %>
+          <%= f.select :bitterness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+          <%= f.label :sweetness, "甘味",class: "new-select__label" %>
+          <%= f.select :sweetness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+        </div>
+        <div>
+          <%= f.label :fragrance, "香り",class: "new-select__label" %>
+          <%= f.select :fragrance, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+          <%= f.label :richiness, "コク",class: "new-select__label" %>
+          <%= f.select :richiness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
+        </div>
       </div>
-      <div>
-        <%= f.label :bitterness, "苦味" %>
-        <%= f.select :bitterness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
-      </div>
-      <div>
-        <%= f.label :sweetness, "甘味" %>
-        <%= f.select :sweetness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
-      </div>
-      <div>
-        <%= f.label :fragrance, "香り" %>
-        <%= f.select :fragrance, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
-      </div>
-      <div>
-        <%= f.label :richiness, "コク" %>
-        <%= f.select :richiness, [[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]] %>
-      </div>
-      <%= f.submit "SEND" %>
+      <%= f.submit "SEND", class: "new-submit-btn" %>
     <% end %>
-  
-
-
 </div>
