@@ -16,45 +16,134 @@ body {
     margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
-    .header-logo {
-      background-color: turquoise;
-    }
-    .header-menu {
-      background-color: turquoise;
-    }
   }
   .container {
     // トップページ
-    background-color: #ccf5ff;
     width: 80%;
     margin: 0 auto;
     .top-head {
-      background-color: tomato;
-      width: 150px;
+      background-color: #6f5436;
+      width: 300px;
+      height: 50px;
       margin: 0 auto;
+      text-align: center;
+      .sign-in-link {
+        text-decoration: none;
+        font-size: 30px;
+        color: #fff;
+      }
+      .new-post-link {
+        text-decoration: none;
+        font-size: 30px;
+        color: #fff;
+      }
     }
     .top-index {
-      background-color: #ffeacc;
       margin-top: 50px;
+      &__post {
+        background-color: #ffeacc;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        .index-post-link {
+          text-decoration: none;
+          color: #000;
+        }
+        &--img {
+          width: 80px;
+          height: 80px;
+          border-radius: 100%;
+        }
+        &--user-name{
+          font-size: 50px;
+        }
+        &--product {
+          font-size: 30px;
+        }
+        &--stars {
+          font-size: 30px;
+          color: gold;
+        }
+        &--heart {
+          font-size: 25px;
+          text-align: right;
+          padding-right: 30px;
+        }
+          .haert-red {
+            color: #d70035;
+          }
+      }
     }
 
     // 商品詳細ページ
-    .user-info {
-      font-size: 20px;
-      background-color: yellowgreen;
-      width: 150px;
-      margin: 0 auto;
+    .post-product-name {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px 0;
     }
-    ul {
+    .user-info {
+      font-size: 30px;
+      margin: 20px 0;
+      .post-user-link {
+        text-decoration: #000;
+        display: flex;
+        justify-content: center;
+        .post-user-img {
+          width: 60px;
+          height: 60px;
+          border-radius: 100%;
+        }
+        .post-user-name {
+          display: block;
+          line-height: 60px;
+          color: #000;
+        }
+      }
+
+    }
+    .post-info {
       list-style: none;
+      width: 60%;
+      margin: 0 auto;
+      li {
+        font-size: 25px;
+        border-bottom: solid 1px #9d8e87;
+        .fa-star {
+          color: gold;
+        }
+      }
     }
     .product-show__menu {
+      font-size: 20px;
       display: flex;
-      padding-left: 60px;
+      width: 60%;
+      margin: 20px auto;
+      padding-left: 40px;
       div {
         margin-right: 20px;
       }
     }
+    .comment {
+      width: 60%;
+      margin: 0 auto;
+      padding-left: 40px;
+      &__textbox {
+        width: 80%;
+        height: 40px;
+      }
+      &__form-send {
+        margin-left: 20px;
+      }
+      &__show{
+        margin-top: 20px;
+        &--content {
+        width: 100%;
+        background-color: #ffeacc;
+        margin-bottom: 10px;
+      }
+    }
+   }
   }
 }
 
