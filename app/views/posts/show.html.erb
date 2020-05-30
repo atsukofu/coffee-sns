@@ -1,11 +1,16 @@
 <div class="container">
+  <div class="post-product-name">商品名：<%= @post.product %></div>
   <canvas class="myChart">
   </canvas>
   <div class="user-info">
-    <%= link_to @post.user.nickname, user_path(@post.user) %>
+    <%= link_to user_path(@post.user), class: "post-user-link" do %>
+      <%= image_tag @post.user.image.thumb_user.url, class: "post-user-img" %>
+      <span class="post-user-name">
+        <%= @post.user.nickname %>
+      </span>
+    <% end %>
   </div>
-  <ul>
-    <li>商品名：<%= @post.product %></li>
+  <ul class="post-info">
     <li>購入店舗：<%= @post.shop %></li>
     <li>豆の銘柄：<%= @post.brand %></li>
     <li>価格：<%= @post.price %>円</li>
@@ -19,7 +24,13 @@
         1袋あたり
       <% end %>
       </li>
-    <li>全体評価：<%= @post.stars %></li>
+    <li>全体評価：
+      <span>
+        <% @post.stars.times do%>
+          <i class="fas fa-star"></i>
+        <% end %>
+      </span>
+    </li>
   </ul>
   <div class="product-show__menu">
     <div id="like-<%= @post.id %>">
@@ -29,7 +40,6 @@
     <div>削除</div>
   </div>
   <div class="comment">
-    <div id="like-buttons">
     <%= form_for [@post, @comment] do |f| %>
       <%= f.text_area :content, placeholder: "コメントを書く", class: "comment__textbox" %>
       <%= f.submit "SEND", class: "comment__form-send" %>
@@ -37,8 +47,10 @@
     <div class="comment__show">
       <% if @comments %>
         <% @comments.each do |comment|%>
-          <%= link_to comment.user.nickname, user_path(comment.user) %>： 
-          <%= comment.content %>
+          <div class="comment__show--content">
+            <%= link_to comment.user.nickname, user_path(comment.user) %>： 
+            <%= comment.content %>
+          </div>
         <% end %>
       <% end %>    
     </div>

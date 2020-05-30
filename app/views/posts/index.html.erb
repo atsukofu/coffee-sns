@@ -1,24 +1,34 @@
 <div class="container">
   <div class="top-head">
     <% if !current_user %>
-      <%= link_to "sign in / sign up", new_user_session_path %>
+      <%= link_to "sign in / sign up", new_user_session_path, class: "sign-in-link" %>
+    <% else %>
+      <%= link_to "Post New Coffee!", new_post_path, class: "new-post-link" %>
     <% end %>
   </div>
   <div class="top-index">
-      <% @posts.each do |post| %>
-        <div  class="top-index__post">
-          <%= link_to post_path(post), class: "post_link" do %>
-            <%= image_tag post.user.image.thumb_user.url, class: "post-user-img" %>
-            <span class="post-user-nickname">
-              <%= post.user.nickname %>
-            </span>
-            <div class="post-product">
+    <% @posts.each do |post| %>
+      <div class="top-index__post">
+        <%= link_to post_path(post), class:"index-post-link" do%>
+          <%= image_tag post.user.image.thumb_user.url, class: "top-index__post--img" %>
+          <span class="top-index__post--user-name">
+            <%= post.user.nickname %>
+          </span>
+          <div>
+            <span class="top-index__post--product">
               <%= post.product %>
-            </div>
-            <%= post.stars %>
-            <%= post.likes.count %><span>いいね!</span>
-          <% end %>
-        </div>
-      <% end %>
+            </span>
+            <% post.stars.times do%>
+              <span class="top-index__post--stars">
+                <i class="fas fa-star"></i>
+              </span>
+            <% end %>
+          </div>
+          <div class="top-index__post--heart">
+            <i class="far fa-heart"></i><%= post.likes.count %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
