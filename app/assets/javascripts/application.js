@@ -13,8 +13,9 @@
 //= require jquery
 //= require Chart.min
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
-//= require_tree .
+// require_tree .
 
 
 $(function() {

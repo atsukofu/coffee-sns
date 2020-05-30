@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="post-product-name">商品名：<%= @post.product %></div>
   <canvas class="myChart">
@@ -57,3 +58,6 @@
   </div>
 
 </div>
+<% content_for :js do %>
+  <%= javascript_include_tag 'chart.js','data-turbolinks-track': 'reload' %>
+<% end %>
