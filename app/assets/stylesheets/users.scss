@@ -1,3 +1,81 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-register-edit-title {
+  text-align: center;
+}
+
+.field {
+  font-size: 25px;
+}
+
+.actions {
+  width: 70px;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.shared-link {
+  font-size: 25px;
+  color: #000;
+  margin-top: 15px;
+}
+
+.delete-title {
+  margin-bottom: 0;
+}
+
+.cancel-edit-btn {
+  margin-bottom: 15px;
+}
+
+// ユーザー詳細ページ
+.show-user {
+  margin: 0 auto;
+  text-align: center;
+  &--img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+  }
+  &--name {
+    font-size: 50px;
+    line-height: 80px;
+  }
+}
+
+.user-message {
+  width: 100%;
+  font-size: 25px;
+  margin-top: 20px;
+  &--content {
+    background-color: #ffeacc;
+  }
+}
+
+.user-articles {
+  font-size: 25px;
+  margin-top: 20px;
+  &--link {
+    text-decoration: none;
+    color: #000;
+  }
+  &--post {
+    width: 100%;
+    background-color: #ffeacc;
+    margin-bottom: 15px;
+    &__stars {
+      color: gold;
+    }
+    &__heart {
+      text-align: right;
+      margin-right: 25px;
+    }
+  }
+}
+
+.edit-user-link {
+  color: #000;
+  font-size: 25px;
+}

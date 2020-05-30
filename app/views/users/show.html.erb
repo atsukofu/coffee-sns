@@ -1,15 +1,37 @@
 <div class="container">
-  <%= image_tag @user.image.thumb_user.url %>
-  <%= @user.nickname %>
-  <%= @user.message %>
-  <% @user.posts.each do |post| %>
-    <%= link_to post_path(post) do %>
-      <%= post.product %>
-      <%= post.stars %>
-      <%= post.likes.count %><span>いいね!</span>
+  <div class="show-user">
+    <%= image_tag @user.image.thumb_user.url, class: "show-user--img" %>
+    <span class="show-user--name">
+      <%= @user.nickname %>
+    </span>
+  </div>
+  <div class="user-message">
+    自己紹介メッセージ
+    <div class="user-message--content">
+      <%= @user.message %>
+    </div>
+  </div>
+  <div class="user-articles">
+    投稿一覧
+    <% @user.posts.each do |post| %>
+      <div class="user-articles--post">
+        <%= link_to post_path(post), class:"user-articles--link" do %>
+          <span class="user-articles--post__product">
+            <%= post.product %>
+          </span>
+          <% post.stars.times do%>
+            <span class="user-articles--post__stars">
+            <i class="fas fa-star"></i>
+            </span>
+          <% end %>
+          <div class="user-articles--post__heart">
+            <i class="far fa-heart"></i><%= post.likes.count %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
   <% if current_user.id == @user.id %>
-    <%= link_to "編集する", edit_user_registration_path(@user) %>
+    <%= link_to "編集する", edit_user_registration_path(@user), class: "edit-user-link" %>
   <% end %>
 </div>
