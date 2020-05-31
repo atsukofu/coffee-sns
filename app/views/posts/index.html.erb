@@ -1,4 +1,7 @@
 <div class="container">
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
   <div class="top-head">
     <% if !current_user %>
       <%= link_to "sign in / sign up", new_user_session_path, class: "sign-in-link" %>

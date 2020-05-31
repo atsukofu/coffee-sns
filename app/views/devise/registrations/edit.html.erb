@@ -19,17 +19,27 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :new_password %> <br /><i>(変更しない場合は入力しないでください)</i><br />
+      <%= f.label :new_password %><em>(※<%= @minimum_password_length %> 文字以上)</em><br /><i>(変更しない場合は入力しないでください)</i><br />
       <%= f.password_field :password, autocomplete: "new-password", class: "new-text-field" %>
       <% if @minimum_password_length %>
         <br />
-        <em>(※<%= @minimum_password_length %> 文字以上)</em>
+        
       <% end %>
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-text-field" %>
+    </div>
+
+     <div class="field">
+      <%= f.label :message %><br />
+      <%= f.text_field :message, autofocus: true, autocomplete: "message", class: "new-text-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :picture %><br />
+      <%= f.file_field :image, class: "picture" %>
     </div>
 
     <div class="field">

@@ -1,4 +1,7 @@
 <div class="container">
+  <% if @post.errors.any? %>
+   <p>商品名・購入店舗・価格は必須項目です。</p>
+  <% end %>
   <%= form_for @post do |f| %>
       <div class="new-title">
         Create New Coffee Data!
