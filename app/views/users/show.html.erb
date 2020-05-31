@@ -31,7 +31,7 @@
       </div>
     <% end %>
   </div>
-  <% if current_user.id == @user.id %>
+  <% if current_user && current_user.id == @user.id %>
     <%= link_to "編集する", edit_user_registration_path(@user), class: "edit-user-link" %>
   <% end %>
 </div>

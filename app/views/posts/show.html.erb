@@ -41,15 +41,19 @@
         <div id="like-<%= @post.id %>">
           <%= render 'likes/like', { post: @post} %>
         </div>
-        <div>編集</div>
-        <div>削除</div>
+        <% if current_user && current_user.id == @post.user.id %>
+          <%= link_to "編集", edit_post_path(@post) %>
+          <%= link_to "削除", post_path(@post), method: :delete %>
+        <% end %>
       </div>
     </div>
   </div>
   <div class="comment">
-    <%= form_for [@post, @comment] do |f| %>
-      <%= f.text_area :content, placeholder: "コメントを書く", class: "comment__textbox" %>
-      <%= f.submit "SEND", class: "comment__form-send" %>
+    <% if current_user %>
+      <%= form_for [@post, @comment] do |f| %>
+        <%= f.text_area :content, placeholder: "コメントを書く", class: "comment__textbox" %>
+        <%= f.submit "SEND", class: "comment__form-send" %>
+      <% end %>
     <% end %>
     <div class="comment__show">
       <% if @comments %>

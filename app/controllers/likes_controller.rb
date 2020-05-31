@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_post
+  before_action :redirect_root
   
   def create
     @like = current_user.likes.new(post_id: @post.id)
