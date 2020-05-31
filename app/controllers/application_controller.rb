@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_root
-    if @current_user == nil
+    if current_user == nil
      flash[:notice] = "ログインが必要です"
      redirect_to root_path
     end

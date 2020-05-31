@@ -122,6 +122,10 @@
       div {
         margin-right: 20px;
       }
+      &--link {
+        margin-right: 20px;
+        color: #000;
+      }
     }
     .comment {
       width: 90%;
@@ -136,6 +140,9 @@
           width: 100%;
           background-color: #ffeacc;
           margin-bottom: 10px;
+        }
+        &--user {
+          color: #000;
         }
       }
     }
@@ -224,17 +231,20 @@
           font-size: 20px;
         }
       }
+    }
 
       // 新規投稿ページ
       .container {
-
+        max-width: 580px;
+        min-width: 520px;
+        overflow: hidden;
       }
       .new-title {
         font-size: 25px;
         text-align: center;
       }
       .new-text-field{
-        width: 80%;
+        width: 100%;
       }
       .detail-value {
         font-size: 20px;
@@ -248,7 +258,6 @@
           display: inline-block;
         }
       }
-    }
   }
 
   // PCサイト
@@ -329,20 +338,24 @@
           }
         }
       }
+    }
       
         //  投稿ページ
+        .container {
+          max-width: 720px;
           .new-title {
             font-size: 50px;
           }
           .new-text-field-wrapper {
             text-align: center;
             .new-text-field{
-              width: 100%;
+              width: 500px;
               height: 50px;
               font-size: 20px;
             }
           }
           .new-select--upper {
+            margin-left: 110px;
             display: flex;
             .new-select{
               margin-right: 5px;
@@ -355,9 +368,11 @@
           }
           .detail-value {
             font-size: 20px;
+            margin-left: 110px;
           }
           .detail-value--area{
             display: flex;
+            margin-left: 110px;
             .new-select{
               margin-right: 5px;
               display: block;
@@ -369,7 +384,10 @@
               }
             }
          }
-     }
+         .new-submit-btn {
+           margin-left: 110px;
+         }
+      }
     }
     
     
