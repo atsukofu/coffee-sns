@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_group
+  before_action :redirect_root, {only: [:create]}
   
   def create
     @comment = Comment.create(comment_params)

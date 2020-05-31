@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :redirect_root, {except: [:index, :show]}
+
   def index
    @posts = Post.all
   end
