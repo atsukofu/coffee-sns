@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :redirect_root, {except: [:index, :show]}
+  before_action :correct_user, {only: [:edit, :destroy]}
 
   def index
    @posts = Post.all
@@ -54,6 +55,13 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:product, :shop, :brand, :price, :per, :stars, :acidity, :bitterness, :sweetness, :fragrance, :richiness).merge(user_id: current_user.id)
+  end
+
+  def correct_user
+    @post = Post.find(params[:id])
+    if current_user != @post.user_id
+      redirect_to root_path, notice: '編集権限がありません'
+    end
   end
 
 end
