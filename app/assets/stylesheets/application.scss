@@ -41,6 +41,12 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
+
+    @media screen and (max-width:780px){
+    .header-logo {
+      font-size: 30px;
+    }
     .fa-bars {
       color: #1a0d04;
       cursor: pointer;
@@ -87,6 +93,39 @@
       opacity: 1;
       visibility: visible;
       padding-left: 0;
+     }
+    }
+    @media screen and (min-width:781px){
+      .fa-bars {
+        opacity: 0;
+      }
+      .more_list{
+        display: table;
+        margin: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &__parts {
+          display: inline-block;
+          display: table-cell;
+          height: 100px;
+          padding:15px 15px 0 0;
+          font-size: 20px;
+          .login-user-link{
+            color: #000;
+          }
+          .sign-out-link{
+            color: #000;
+          }
+
+        }
+        .login-user-img {
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+        }
+      }
     }
    }
   }

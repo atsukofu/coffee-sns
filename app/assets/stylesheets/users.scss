@@ -2,12 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// ユーザー編集ページ
 .user-register-edit-title {
   text-align: center;
 }
 
 .field {
-  font-size: 25px;
+  font-size: 18px;
+}
+
+.new-text-field {
+  width: 100%;
 }
 
 .actions {
@@ -30,7 +35,12 @@
   margin-bottom: 15px;
 }
 
+.back-btn {
+  color: black;
+}
+
 // ユーザー詳細ページ
+
 .show-user {
   margin: 0 auto;
   text-align: center;
@@ -40,14 +50,14 @@
     border-radius: 100%;
   }
   &--name {
-    font-size: 50px;
-    line-height: 80px;
+    display: block;
+    font-size: 30px;
   }
 }
 
 .user-message {
   width: 100%;
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 20px;
   &--content {
     background-color: #ffeacc;
@@ -55,7 +65,7 @@
 }
 
 .user-articles {
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 20px;
   &--link {
     text-decoration: none;
@@ -65,17 +75,72 @@
     width: 100%;
     background-color: #ffeacc;
     margin-bottom: 15px;
+    padding: 5px 0 0 5px;
+    &__product {
+      display: block;
+    }
     &__stars {
       color: gold;
     }
     &__heart {
       text-align: right;
+      margin-right: 20px;
+      font-size: 15px;
+      .fa-heart {
+        color: #d70035;
+      }
+    }
+  }
+}
+.edit-user-link {
+  color: #000;
+  font-size: 16px;
+}
+
+
+// PCサイト
+@media (min-width: 781px){
+// ユーザー詳細ページ
+  .show-user{
+  &--img {
+    width: 80px;
+    height: 80px;
+  }
+  &--name {
+    font-size: 50px;
+    line-height: 80px;
+    display: inline-block;
+  }
+}
+.user-message {
+  font-size: 20px;
+}
+
+.user-articles {
+  font-size: 20px;
+  &--post {
+    &__product {
+      display: inline-block;
+    }
+    &__stars {
+      color: gold;
+    }
+    &__heart {
       margin-right: 25px;
     }
   }
 }
 
-.edit-user-link {
-  color: #000;
-  font-size: 25px;
+  // ユーザー編集ページ
+
+  .user-register-edit-title {
+    text-align: left;
+  }
+  .field {
+    font-size: 20px;
+  }
+
+  .new-text-field {
+    width: 70%;
+  }
 }

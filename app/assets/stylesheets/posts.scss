@@ -2,112 +2,111 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  background-color: #ccbba3;
-  width: 100vw;
-  height: 100vh;
-  header {
-    width: 100%;
-    height: 100px;
-    background-color: #ffeacc;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-  }
+
+
+  
   .container {
     // トップページ
     width: 80%;
     margin: 0 auto;
-    .top-head {
-      background-color: #6f5436;
-      width: 300px;
-      height: 50px;
-      margin: 0 auto;
-      text-align: center;
-      .sign-in-link {
-        text-decoration: none;
-        font-size: 30px;
-        color: #fff;
-      }
-      .new-post-link {
-        text-decoration: none;
-        font-size: 30px;
-        color: #fff;
-      }
+  }
+  .top-head {
+    background-color: #6f5436;
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    .sign-in-link {
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      cursor: pointer;
+      line-height: 50px;
     }
-    .top-index {
+    .new-post-link {
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      cursor: pointer;
+      line-height: 50px;
+    }
+  }
+  .top-index {
       margin-top: 50px;
       &__post {
         background-color: #ffeacc;
-        width: 100%;
-        height: 200px;
+        padding: 5px 0 0 5px;
         margin-bottom: 20px;
         .index-post-link {
           text-decoration: none;
           color: #000;
         }
         &--img {
-          width: 80px;
-          height: 80px;
+          width: 30px;
+          height: 30px;
           border-radius: 100%;
         }
         &--user-name{
-          font-size: 50px;
+          font-size: 25px;
         }
         &--product {
-          font-size: 30px;
+          font-size: 20px;
+          display: block;
         }
         &--stars {
-          font-size: 30px;
+          font-size: 15px;
           color: gold;
         }
         &--heart {
-          font-size: 25px;
+          font-size: 15px;
           text-align: right;
-          padding-right: 30px;
-        }
-          .haert-red {
+          padding-right: 20px;
+          .fa-heart {
             color: #d70035;
           }
       }
     }
-
+    }
+    
     // 商品詳細ページ
     .post-product-name {
       text-align: center;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: bold;
-      margin: 20px 0;
+      margin: 10px 0;
+    }
+    #canvas-wrapper {
+      width: 100%;
+      height: 230px;
+      margin: 0 auto;
     }
     .user-info {
-      font-size: 30px;
+      font-size: 15px;
       margin: 20px 0;
       .post-user-link {
         text-decoration: #000;
         display: flex;
         justify-content: center;
         .post-user-img {
-          width: 60px;
-          height: 60px;
+          width: 40px;
+          height: 40px;
           border-radius: 100%;
         }
         .post-user-name {
           display: block;
-          line-height: 60px;
+          line-height: 40px;
           color: #000;
         }
       }
-
+      
     }
     .post-info {
       list-style: none;
-      width: 60%;
+      width: 100%;
       margin: 0 auto;
+      padding: 0;
       li {
-        font-size: 25px;
+        font-size: 15px;
         border-bottom: solid 1px #9d8e87;
         .fa-star {
           color: gold;
@@ -115,66 +114,262 @@ body {
       }
     }
     .product-show__menu {
-      font-size: 20px;
+      font-size: 15px;
       display: flex;
       width: 60%;
-      margin: 20px auto;
-      padding-left: 40px;
+      margin: 10px auto;
       div {
         margin-right: 20px;
       }
     }
     .comment {
-      width: 60%;
+      width: 90%;
       margin: 0 auto;
-      padding-left: 40px;
       &__textbox {
-        width: 80%;
+        width: 100%;
         height: 40px;
-      }
-      &__form-send {
-        margin-left: 20px;
       }
       &__show{
         margin-top: 20px;
         &--content {
-        width: 100%;
-        background-color: #ffeacc;
-        margin-bottom: 10px;
+          width: 100%;
+          background-color: #ffeacc;
+          margin-bottom: 10px;
+        }
       }
     }
-   }
+    
+    //  投稿ページ
+    .new-title {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .new-text-field {
+      width: 100%;
+      height: 20px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .detail-value {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    .new-select__label {
+      font-size: 16px;
+      margin-right: 10px;
+      display: block;
+    }
+    select {
+      width: 50px;
+      height: 30px;
+    }
+    .new-submit-btn {
+      width: 70px;
+      height: 30px;
+      margin-top: 20px;
+    }
+    
+  
 
-  //  投稿ページ
-   .new-title {
-     text-align: center;
-     font-size: 50px;
-     margin-bottom: 10px;
-   }
-   .new-text-field{
-   width: 100%;
-   height: 40px;
-   font-size: 20px;
-   margin-bottom: 20px;
-   }
-   .detail-value {
-     font-size: 20px;
-     margin-bottom: 0;
-   }
-   .new-select__label {
-     font-size: 25px;
-     margin-right: 10px;
-   }
-   select {
-     width: 50px;
-     height: 30px;
-     margin-right: 20px;
-   }
-   .new-submit-btn {
-    width: 70px;
-    height: 30px;
-    margin-top: 20px;
-   }
+   
+  
+
+  // タブレット
+  @media (min-width: 479px) and (max-width: 780px){
+    .container {
+      width: 80%;
+      // トップページ
+      .top-index__post--product {
+        display: inline-block;
+      }
+
+      // 商品詳細ページ
+      .post-product-name {
+        font-size: 25px;
+      }
+     #canvas-wrapper {
+        width: 500px;
+        height: 400px;
+        margin: 0 auto;
+      }
+      .user-info {
+        font-size: 25px;
+        line-height: 60px;
+        .post-user-img{
+          width: 60px;
+          height: 60px;
+        }
+        .post-user-name {
+          line-height: 60px;
+
+        }
+      }
+      .post-info {
+        width: 90%;
+        li {
+          font-size: 25px;
+        }
+      }
+      .product-show__menu {
+        font-size: 20px;
+      }
+      .comment {
+        font-size: 20px;
+        &__textbox {
+          font-size: 20px;
+          height: 60px;
+        }
+        &__form-send {
+          font-size: 20px;
+        }
+      }
+
+      // 新規投稿ページ
+      .new-title {
+        font-size: 25px;
+        text-align: center;
+      }
+      .new-text-field{
+        width: 80%;
+      }
+      .detail-value {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .new-select{
+        margin-right: 10px;
+        &__label {
+          font-size: 16px;
+          margin-right: 2px;
+          display: inline-block;
+        }
+      }
+    }
   }
-}
 
+  // PCサイト
+  @media (min-width: 781px){
+    // トップページ
+      .sign-in-link {
+        font-size: 30px;
+      }
+      .new-post-link {
+        font-size: 30px;
+      }
+      .top-index {
+        margin-top: 50px;
+        &__post {
+          background-color: #ffeacc;
+          padding: 10px 0 0 10px;
+          &--img {
+            width: 80px;
+            height: 80px;
+          }
+          &--user-name{
+            font-size: 30px;
+          }
+          &--product {
+            font-size: 20px;
+            display: inline-block;
+          }
+          &--stars {
+            font-size: 20px;
+            color: gold;
+          }
+          &--heart {
+            padding-right: 30px;
+          }
+        }
+      }
+      // 商品詳細ページ
+      .post-product-name {
+        text-align: center;
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+      }
+      .flex-wrapper {
+        display: flex;
+        justify-content: center;
+        height: 400px;
+        #canvas-wrapper {
+          flex-basis: 60%;
+        }
+        .info-wrapper {
+          flex-basis: 40%;
+          .user-info {
+            .post-user-link {
+              justify-content: left;
+              margin-top: 40px;
+              .post-user-img {
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+              }
+              .post-user-name {
+                line-height: 60px;
+                font-size: 30px;
+              }
+            }
+          }
+          .post-info {
+            li {
+              font-size: 20px;
+              margin-bottom: 5px;
+            }
+          }
+          .product-show__menu {
+            font-size: 16px;
+          }
+        }
+      }
+      
+        //  投稿ページ
+        .container  {
+          width: 60%;
+          max-width: 760px;
+          .new-title {
+            font-size: 50px;
+          }
+          .new-text-field-wrapper {
+            text-align: center;
+            .new-text-field{
+              width: 100%;
+              height: 50px;
+              font-size: 20px;
+            }
+          }
+          .new-select--upper {
+            display: flex;
+            .new-select{
+              margin-right: 5px;
+              &__label {
+                display: inline-block;
+                margin-right: 0;
+                font-size: 19px;
+              }
+            }
+          }
+          .detail-value {
+            font-size: 20px;
+          }
+          .detail-value--area{
+            display: flex;
+            .new-select{
+              margin-right: 5px;
+              display: block;
+              .new-select__label {
+                font-size: 19px;
+                margin-right: 5px;
+                margin-bottom: 10px;
+                display: inline-block;
+              }
+            }
+         }
+     }
+    }
+    
+    
+    
+    
+    

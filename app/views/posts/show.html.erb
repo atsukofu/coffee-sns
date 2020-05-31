@@ -1,44 +1,50 @@
 
 <div class="container">
   <div class="post-product-name">商品名：<%= @post.product %></div>
-  <canvas class="myChart">
-  </canvas>
-  <div class="user-info">
-    <%= link_to user_path(@post.user), class: "post-user-link" do %>
-      <%= image_tag @post.user.image.thumb_user.url, class: "post-user-img" %>
-      <span class="post-user-name">
-        <%= @post.user.nickname %>
-      </span>
-    <% end %>
-  </div>
-  <ul class="post-info">
-    <li>購入店舗：<%= @post.shop %></li>
-    <li>豆の銘柄：<%= @post.brand %></li>
-    <li>価格：<%= @post.price %>円</li>
-    <li>
-      単位：
-      <% if @post.per == 1 %>
-        一杯あたり
-      <% elsif @post.per == 2 %>
-        100gあたり
-      <% elsif @post.per == 3 %>
-        1袋あたり
-      <% end %>
-      </li>
-    <li>全体評価：
-      <span>
-        <% @post.stars.times do%>
-          <i class="fas fa-star"></i>
-        <% end %>
-      </span>
-    </li>
-  </ul>
-  <div class="product-show__menu">
-    <div id="like-<%= @post.id %>">
-      <%= render 'likes/like', { post: @post} %>
+  <div class="flex-wrapper">
+    <div id="canvas-wrapper">
+      <canvas class="myChart" width="400" height="300">
+      </canvas>
     </div>
-    <div>編集</div>
-    <div>削除</div>
+    <div class="info-wrapper">
+      <div class="user-info">
+        <%= link_to user_path(@post.user), class: "post-user-link" do %>
+          <%= image_tag @post.user.image.thumb_user.url, class: "post-user-img" %>
+          <span class="post-user-name">
+            <%= @post.user.nickname %>
+          </span>
+        <% end %>
+      </div>
+      <ul class="post-info">
+        <li>購入店舗：<%= @post.shop %></li>
+        <li>豆の銘柄：<%= @post.brand %></li>
+        <li>価格：<%= @post.price %>円</li>
+        <li>
+          単位：
+          <% if @post.per == 1 %>
+            一杯あたり
+          <% elsif @post.per == 2 %>
+            100gあたり
+          <% elsif @post.per == 3 %>
+            1袋あたり
+          <% end %>
+          </li>
+        <li>全体評価：
+          <span>
+            <% @post.stars.times do%>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </span>
+        </li>
+      </ul>
+      <div class="product-show__menu">
+        <div id="like-<%= @post.id %>">
+          <%= render 'likes/like', { post: @post} %>
+        </div>
+        <div>編集</div>
+        <div>削除</div>
+      </div>
+    </div>
   </div>
   <div class="comment">
     <%= form_for [@post, @comment] do |f| %>
