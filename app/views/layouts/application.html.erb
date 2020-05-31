@@ -13,9 +13,10 @@
 
   <body>
     <header>
-        <% if current_user %>
-            <i class="fas fa-bars"></i>
-             <ul class="more_list">
+      <%=link_to "Coffe SNS", root_path, class: "header-logo" %>
+      <% if current_user %>
+          <i class="fas fa-bars"></i>
+            <ul class="more_list">
               <li class = "more_list__parts">
                 <%= link_to user_path(current_user), class: "login-user-link" do %>
                   <%= image_tag current_user.image.thumb_user.url, class: "login-user-img" %>
@@ -24,12 +25,11 @@
                   </span>
                 <% end %>
               </li>
-              <li class = "more_list__parts">
-                <%= link_to "sign out", destroy_user_session_path, class: "sign-out-link", method: :delete %>
-              </li>
-            </ul>
-        <% end %>
-        <%=link_to "Coffe SNS", root_path, class: "header-logo" %>
+            <li class = "more_list__parts">
+              <%= link_to "sign out", destroy_user_session_path, class: "sign-out-link", method: :delete %>
+            </li>
+          </ul>
+      <% end %>
       </header>
     <%= yield %>
   </body>
