@@ -61,3 +61,5 @@ gem 'mini_magick'
 gem "font-awesome-sass" 
 gem 'gon'
 gem 'jquery-turbolinks'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
