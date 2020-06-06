@@ -14,10 +14,6 @@ class LikesController < ApplicationController
   end
 
   private
-  def like_params
-    params.require(:like).merge(post_id: @post.id, user_id: current_user.id)
-  end
-
   def set_post
     @post = Post.find(params[:post_id])
   end

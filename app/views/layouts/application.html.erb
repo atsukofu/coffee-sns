@@ -13,7 +13,9 @@
 
   <body>
     <header>
-      <%=link_to "Coffe SNS", root_path, class: "header-logo" %>
+      <%=link_to root_path, class: "header-logo" do %>
+        <%= image_tag 'coffee-sns-logo2.png' %>
+      <% end %>
       <% if current_user %>
           <i class="fas fa-bars"></i>
             <ul class="more_list">

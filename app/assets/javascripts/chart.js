@@ -6,8 +6,6 @@ $(document).on('turbolinks:load', function(){
   var richiness = gon.richiness;
   
   var ctx = document.getElementsByClassName("myChart");
-  // var canvas_pw = $('#canvas-wrapper').width();
-  // var canvas_ph = $('#canvas-wrapper').height();
   
   new Chart(ctx, {
     type: 'radar',
@@ -15,8 +13,8 @@ $(document).on('turbolinks:load', function(){
       labels: ["酸味", "苦味", "甘味", "香り", "コク"],
       datasets: [{
         label: '味のバランス',
-        backgroundColor: "rgba(0,0,80,0.4)",
-        borderColor: "rgba(0,0,80,1)",
+        backgroundColor: "rgba(0,128,85,0.4)",
+        borderColor: "rgba(0,128,85,1)",
         data: [acidity,bitterness,sweetness,fragrance,richiness]
       }],
     },
@@ -35,5 +33,3 @@ $(document).on('turbolinks:load', function(){
   });
 });
 
-// ctx.setWidth(canvas_pw);
-// ctx.setHeight(canvas_ph);

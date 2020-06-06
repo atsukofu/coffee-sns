@@ -63,21 +63,24 @@
   width: 100%;
   font-size: 20px;
   margin-top: 20px;
+  color: #008055;
   &--content {
-    background-color: #ffeacc;
+    background-color: #fff;
+    color: #000;
   }
 }
 
 .user-articles {
   font-size: 20px;
   margin-top: 20px;
+  color: #008055;
   &--link {
     text-decoration: none;
     color: #000;
   }
   &--post {
     width: 100%;
-    background-color: #ffeacc;
+    background-color: #fff;
     margin-bottom: 15px;
     padding: 5px 0 0 5px;
     &__product {
