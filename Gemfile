@@ -64,10 +64,9 @@ gem 'gon'
 gem 'jquery-turbolinks'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
-group :production do
-
 gem 'pg'
 gem 'fog-aws'
+
+group :production do
 
 end
