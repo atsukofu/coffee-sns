@@ -64,7 +64,7 @@ gem 'gon'
 gem 'jquery-turbolinks'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'pg'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'fog-aws'
 
 group :production do
