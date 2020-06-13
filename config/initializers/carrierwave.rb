@@ -9,8 +9,8 @@ CarrierWave.configure do |config|
   elsif Rails.env.production? 
     config.storage = :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory  = 'coffee-sns'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/coffee-sns'
+    config.fog_directory  = 'coffee-sns-2'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/coffee-sns-2'
     config.fog_credentials = {
     provider: 'AWS',
     aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
