@@ -10,11 +10,11 @@
       <div class="user-info">
         <%= link_to user_path(@post.user), class: "post-user-link" do %>
           <% if @post.user.image == 2 %>
-            <%= image_tag 'hitsujicon.png', class: "post-user-img" %>
+            <%= image_tag 'hitsuji.png', class: "post-user-img" %>
           <% elsif @post.user.image == 3 %>
-            <%= image_tag 'toricon.png', class: "post-user-img" %>
+            <%= image_tag 'koara.png', class: "post-user-img" %>
           <% elsif @post.user.image == 4 %>
-            <%= image_tag 'usagicon.png', class: "post-user-img" %>
+            <%= image_tag 'maskman.png', class: "post-user-img" %>
           <% elsif @post.user.image == 5 %>
             <%= image_tag 'azarashi.png', class: "post-user-img" %>
           <% elsif @post.user.image == 6 %>
