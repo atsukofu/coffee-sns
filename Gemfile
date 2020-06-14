@@ -64,7 +64,9 @@ gem 'jquery-turbolinks'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'activestorage', '~> 5.2.0' 
+gem 'aws-sdk-s3', require: false
 
 group :production do
+  gem 'rails_12factor'
   gem 'pg'
 end
