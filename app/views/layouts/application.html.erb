@@ -21,7 +21,11 @@
             <ul class="more_list">
               <li class = "more_list__parts">
                 <%= link_to user_path(current_user), class: "login-user-link" do %>
-                  <%= image_tag current_user.image.thumb_user.url, class: "login-user-img" %>
+                  <% if current_user.avatar.attached? %>
+                    <%= image_tag current_user.avatar, class: "login-user-img" %>
+                  <% else %>
+                    <%= image_tag 'default.png', class: "login-user-img" %>
+                  <% end %>
                   <span class="login-user-nickname">
                     <%= current_user.nickname %>
                   </span>

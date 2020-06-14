@@ -1,6 +1,10 @@
 <div class="container">
   <div class="show-user">
-    <%= image_tag @user.image.thumb_user.url, class: "show-user--img" %>
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar, class: "show-user--img" %>
+    <% else %>
+      <%= image_tag 'default.png', class: "show-user--img" %>
+    <% end %>
     <span class="show-user--name">
       <%= @user.nickname %>
     </span>

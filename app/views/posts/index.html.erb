@@ -13,7 +13,11 @@
     <% @posts.each do |post| %>
       <div class="top-index__post">
         <%= link_to post_path(post), class:"index-post-link" do%>
-          <%= image_tag post.user.image.thumb_user.url, class: "top-index__post--img" %>
+          <% if post.user.avatar.attached? %>
+            <%= image_tag post.user.avatar, class: "top-index__post--img" %>
+          <% else %>
+            <%= image_tag 'default.png', class: "top-index__post--img" %>
+          <% end %>
           <span class="top-index__post--user-name">
             <%= post.user.nickname %>
           </span>
