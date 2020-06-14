@@ -12,7 +12,7 @@ class User < ApplicationRecord
     self.likes.exists?(post_id: post.id)
   end
 
-  mount_uploader :image, ImageUploader
+  has_one_attached :avatar
 
   validates :nickname, presence: true
 end

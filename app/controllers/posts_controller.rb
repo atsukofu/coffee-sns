@@ -45,10 +45,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.update(post_params)
-    if @post.save
-      redirect_to root_path, notice: '更新しました！'
-    end
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to root_path, notice: '更新しました！'
   end
 
 
@@ -59,7 +58,7 @@ class PostsController < ApplicationController
 
   def correct_user
     @post = Post.find(params[:id])
-    if current_user != @post.user_id
+    if current_user.id != @post.user_id
       redirect_to root_path, notice: '編集権限がありません'
     end
   end
