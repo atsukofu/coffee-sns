@@ -11,7 +11,7 @@
     <% elsif current_user.image == 6 %>
       <%= image_tag 'shika.png', class: "show-user--img" %>
     <% else %>
-      <%= image_tag 'default.png', class: "show-user--img-" %>
+      <%= image_tag 'default.png', class: "show-user--img" %>
     <% end %>
     <span class="show-user--name">
       <%= @user.nickname %>
