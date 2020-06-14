@@ -110,8 +110,8 @@
 // ユーザー詳細ページ
   .show-user{
   &--img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
   &--name {
     font-size: 50px;
@@ -149,5 +149,9 @@
 
   .new-text-field {
     width: 70%;
+  }
+
+  .select-image {
+    margin: 10px 0;
   }
 }

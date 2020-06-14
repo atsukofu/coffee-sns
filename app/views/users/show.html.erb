@@ -1,9 +1,17 @@
 <div class="container">
   <div class="show-user">
-    <% if @user.avatar.attached? %>
-      <%= image_tag @user.avatar, class: "show-user--img" %>
+    <% if current_user.image == 2 %>
+      <%= image_tag 'hitsujicon.png', class: "show-user--img" %>
+    <% elsif current_user.image == 3 %>
+      <%= image_tag 'toricon.png', class: "show-user--img" %>
+    <% elsif current_user.image == 4 %>
+      <%= image_tag 'usagicon.png', class: "show-user--img" %>
+    <% elsif current_user.image == 5 %>
+      <%= image_tag 'azarashi.png', class: "show-user--img" %>
+    <% elsif current_user.image == 6 %>
+      <%= image_tag 'shika.png', class: "show-user--img" %>
     <% else %>
-      <%= image_tag 'default.png', class: "show-user--img" %>
+      <%= image_tag 'default.png', class: "show-user--img-" %>
     <% end %>
     <span class="show-user--name">
       <%= @user.nickname %>

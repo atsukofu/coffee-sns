@@ -9,8 +9,16 @@
     <div class="info-wrapper">
       <div class="user-info">
         <%= link_to user_path(@post.user), class: "post-user-link" do %>
-          <% if @post.user.avatar.attached? %>
-            <%= image_tag @post.user.avatar, class: "post-user-img" %>
+          <% if @post.user.image == 2 %>
+            <%= image_tag 'hitsujicon.png', class: "post-user-img" %>
+          <% elsif @post.user.image == 3 %>
+            <%= image_tag 'toricon.png', class: "post-user-img" %>
+          <% elsif @post.user.image == 4 %>
+            <%= image_tag 'usagicon.png', class: "post-user-img" %>
+          <% elsif @post.user.image == 5 %>
+            <%= image_tag 'azarashi.png', class: "post-user-img" %>
+          <% elsif @post.user.image == 6 %>
+            <%= image_tag 'shika.png', class: "post-user-img" %>
           <% else %>
             <%= image_tag 'default.png', class: "post-user-img" %>
           <% end %>
