@@ -51,7 +51,7 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  pool: 5
-  database: coffee-sns_production
-  username: coffee-sns
-  password: <%= ENV['COFFEE-SNS_DATABASE_PASSWORD'] %>
+  # pool: 5
+  # database: coffee-sns_production
+  # username: coffee-sns
+  # password: <%= ENV['COFFEE-SNS_DATABASE_PASSWORD'] %>
