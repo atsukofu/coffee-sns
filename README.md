@@ -43,6 +43,8 @@ Please use later test account to use this application for test.
 - password: aaaaaa
 
 ## Commitment
+<img width="1268" alt="スクリーンショット 2020-08-30 21 42 55" src="https://user-images.githubusercontent.com/62829792/91659370-0ee04300-eb0a-11ea-85c9-5ff5a8bc2eaf.png">
+<img width="641" alt="スクリーンショット 2020-08-30 21 44 00" src="https://user-images.githubusercontent.com/62829792/91659389-24ee0380-eb0a-11ea-803d-51f02f437995.png">
 このアプリにはレスポンシブデザインを採用しております。<br>
 SNSはスマホから見られることが非常に多く、<br>
 このアプリの役割である、「記録」「共有」については、外出先からでもどこからでも見やすいことが大切だと考えたからです。<br>
